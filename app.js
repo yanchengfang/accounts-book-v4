@@ -5,7 +5,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
-// const favicon = require("serve-favicon");
+const favicon = require("serve-favicon");
 
 // 中间件
 const checkLoginMiddleware = require("./middlewares/checkLoginMiddleware");
@@ -14,9 +14,13 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/user");
 
 var app = express();
-// 处理 /favicon.ico 请求
-app.get("/favicon.ico", (req, res) => res.status(204));
 
+// 处理 /favicon.ico 请求
+// app.get("/favicon.ico", (req, res) => {
+//   res.status(204).end();
+// });
+// 指定favicon文件路径
+app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 // *（读取）当请求到达时：
 // 1. 从Cookie中提取sessionID
 // 2. 使用sessionID从数据库查询对应的会话数据
