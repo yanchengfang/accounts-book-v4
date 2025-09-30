@@ -23,8 +23,6 @@ db(() => {
       console.log(`Server running at http on port ${port}`);
     });
   } else {
-    app.use(require("express-sslify").HTTPS({ trustProtoHeader: true }));
-
     // 证书配置
     const serverOptions = {
       key: fs.readFileSync(
