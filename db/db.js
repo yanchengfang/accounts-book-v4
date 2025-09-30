@@ -1,9 +1,3 @@
-const {
-  LocalMDUrl,
-  AtlasMDUrl_DEV,
-  AtlasMDUrl_PRO,
-} = require("./../config/config");
-
 module.exports = function (success, failure) {
   if (typeof failure !== "function") {
     failure = () => {
@@ -12,6 +6,7 @@ module.exports = function (success, failure) {
   }
   const mongoose = require("mongoose");
 
+  // 根据启动命令行判断运行环境
   if (process.env.NODE_ENV !== "production") {
     require("dotenv").config(); // 加载开发环境变量
   } else {
@@ -22,7 +17,6 @@ module.exports = function (success, failure) {
   console.log(`数据库地址: ${process.env.MONGODB_URI}`);
 
   // 连接mongodb服务
-  // mongoose.connect(`mongodb://${DB_host}:${DB_port}/${DB_name}`);
   mongoose.connect(process.env.MONGODB_URI);
 
   // 设置连接数据库服务的回调

@@ -14,9 +14,9 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/user");
 
 var app = express();
-
+// 处理 /favicon.ico 请求
 app.get("/favicon.ico", (req, res) => res.status(204));
-// app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
+
 // *（读取）当请求到达时：
 // 1. 从Cookie中提取sessionID
 // 2. 使用sessionID从数据库查询对应的会话数据
@@ -38,7 +38,6 @@ app.use(
   })
 );
 
-// view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
