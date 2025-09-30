@@ -1,0 +1,28 @@
+{
+  "accounts": [
+    {
+      "id": "VJDWaMoH5",
+      "title": "买手机",
+      "time": "2025-09-27",
+      "type": "-1",
+      "account": "1000",
+      "remarks": "智能手机"
+    },
+    {
+      "id": "rA6brnJcX",
+      "title": "吃饭",
+      "time": "2025-09-15",
+      "type": "-1",
+      "account": "158",
+      "remarks": "和同事一起吃饭"
+    },
+    {
+      "id": "TcbsDORo0",
+      "title": "发工资",
+      "time": "2025-09-10",
+      "type": "1",
+      "account": "30000",
+      "remarks": "2026年9月份工资"
+    }
+  ]
+}
